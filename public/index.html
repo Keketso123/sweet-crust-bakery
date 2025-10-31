@@ -1,0 +1,92 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1"/>
+  <title>Sweet Crust Bakery - Orders</title>
+  <link rel="stylesheet" href="styles.css"/>
+</head>
+<body>
+  <div class="container">
+    <h1>🍰 Sweet Crust Bakery</h1>
+    <p class="subtitle">Customer Order Management System</p>
+
+    <!-- Navigation buttons -->
+    <div class="nav-buttons">
+      <button id="makeOrderBtn" class="nav-btn active">Make Order</button>
+      <button id="viewOrdersBtn" class="nav-btn">View Orders</button>
+    </div>
+
+    <!-- ORDER FORM SECTION -->
+    <section class="form-section" id="formSection">
+      <h2>Add New Order</h2>
+      <form id="orderForm" autocomplete="off">
+        <div class="row">
+          <label>Order ID
+            <input type="text" id="order_id" name="order_id" required />
+          </label>
+          <label>Customer Name
+            <input type="text" id="customer_name" name="customer_name" required />
+          </label>
+        </div>
+
+        <div class="row">
+          <label>Product Ordered
+            <select id="product_ordered" name="product_ordered" required>
+              <option value="">-- Select product --</option>
+              <option value="Cake">Cake</option>
+              <option value="Bread">Bread</option>
+              <option value="Muffin">Muffin</option>
+              <option value="Cookies">Cookies</option>
+            </select>
+          </label>
+          <label>Quantity
+            <input type="number" id="quantity" name="quantity" min="1" required />
+          </label>
+        </div>
+
+        <div class="row">
+          <label>Order Date
+            <input type="date" id="order_date" name="order_date" required />
+          </label>
+          <label>Order Status
+            <select id="order_status" name="order_status" required>
+              <option value="Pending">Pending</option>
+              <option value="Completed">Completed</option>
+            </select>
+          </label>
+        </div>
+
+        <div class="actions">
+          <button type="submit" id="submitBtn">Add Order</button>
+          <button type="reset">Reset</button>
+        </div>
+        <div id="formMessage" class="message"></div>
+      </form>
+    </section>
+
+    <!-- ORDERS TABLE SECTION -->
+    <section class="table-section hidden" id="tableSection">
+      <h2>All Orders</h2>
+      <table id="ordersTable" class="orders-table">
+        <thead>
+          <tr>
+            <th>#</th>
+            <th>Order ID</th>
+            <th>Customer Name</th>
+            <th>Product</th>
+            <th>Qty</th>
+            <th>Order Date</th>
+            <th>Status</th>
+            <th>Actions</th>
+          </tr>
+        </thead>
+        <tbody></tbody>
+      </table>
+      <div id="tableMessage" class="message"></div>
+    </section>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
